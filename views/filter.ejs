@@ -15,13 +15,25 @@
   <!-- fin navBar -->
 
   <div class="container">
-  <h1 class="mb-4 text-center" >El clima de la Provincia de <%= nameProv %> </h1>
+  <h1 class="mb-4 mt-4 text-center" >El clima de la Provincia de <%= nameProv %> </h1>
 
   <section class="row row-cols-1 row-cols-md-3 g-4 mt-3">
     <% province.forEach(data => { %>
       <div class="col"> 
         <div class="card text-dark bg-info mb-3 shadow" style="max-width: 18rem;">
-          <div class="card-header"><%= data.name %></div>
+          <div class="card-header"><h2 class="text-center"><%= data.name %></h2>
+            <% if(data.weather.description.toLowerCase().includes('neblina')){ %>
+              <p class="text-center"><i class="fas fa-smog fa-3x"></i></i></p>
+              <%}else if(data.weather.description.toLowerCase().includes('llovizna')){ %> 
+                <p class="text-center"><i class="fas fa-cloud-showers-heavy fa-3x"></i></p>
+              <%}else if(data.weather.description.toLowerCase().includes('nublado')){ %> 
+              <p class="text-center"><i class="fas fa-cloud-sun fa-3x"></i></p>
+              <% }else if(data.weather.description.toLowerCase().includes('cubierto')){ %>
+                <p class="text-center"><i class="fas fa-cloud fa-3x"></i></p>
+              <% }else if(data.weather.description.toLowerCase().includes('cubierto')){ %>
+                <p class="text-center"><i class="fas fa-cloud fa-3x"></i></p>
+              <% } %>     
+            </div>
           <div class="card-body">
             <h5 class="card-title">La temperatura es de <%= data.weather.tempDesc %></h5>
             <p class="card-text"><% if(data.weather.temp < 10){ %>
