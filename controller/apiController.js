@@ -17,6 +17,8 @@ module.exports = {
       const caba = datas.find(data => data.name == 'Capital Federal');
       provincesHome.push(laPlata, cordoba, sanLuis, mendoza, rosario, caba);
       res.locals = {provinces: setArrayProvinces}
+      // let str = 'hola como va';
+      // console.log(str.includes('hol'));
       // console.log(provincesHome);
       // console.log(setArrayDeProvincias);
       res.render('home', { 
