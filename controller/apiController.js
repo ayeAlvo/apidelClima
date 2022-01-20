@@ -7,15 +7,21 @@ module.exports = {
     .then( datas => {
       const arrayProvinces = datas.map( valor => valor.province);
       const setArrayProvinces = new Set(arrayProvinces); // crea un Conjunto No hay elementos repetidos en un array
+      
+      const provincesHome = [];
       const laPlata = datas.find(data => data.name == 'La Plata');
       const cordoba = datas.find(data => data.name == 'Córdoba');
-      // console.log(cordoba);
+      const sanLuis = datas.find(data => data.name == 'San Luis');
+      const mendoza = datas.find(data => data.name == 'Mendoza');
+      const rosario = datas.find(data => data.name == 'Rosario');
+      const caba = datas.find(data => data.name == 'Capital Federal');
+      provincesHome.push(laPlata, cordoba, sanLuis, mendoza, rosario, caba);
+      // console.log(provincesHome);
       // console.log(setArrayDeProvincias);
       res.render('home', { 
         data: datas,
         provinces: setArrayProvinces,
-        laPlata,
-        cordoba,
+        provincesHome,
       })
     })
   },

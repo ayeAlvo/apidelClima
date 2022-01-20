@@ -10,7 +10,7 @@
 <body> 
   <div class="container">
   <h1 class="mb-4 text-center" >Localidades de la Provincia de <%= nameProv %> </h1>
-  
+
   <section class="row row-cols-1 row-cols-md-3 g-4">
     <% province.forEach(data => { %>
       <div class="col"> 
@@ -23,7 +23,7 @@
             <% }else if(data.weather.temp < 20 && data.weather.temp >= 10){ %> </p>
               <p>Actualmente está <strong>¡un poco fresco!</strong></p>
               <% }else if(data.weather.temp >= 20 && data.weather.temp < 30){ %> 
-                <p>Actualmente está <strong>¡Está agradable!</strong></p>
+                <p>Actualmente está <strong>¡agradable!</strong></p>
               <% }else if(data.weather.temp >= 30){ %>  
                 <p>Actualmente hace mucho <strong>¡calor!</strong></p>
                 <% } %>  
@@ -31,8 +31,9 @@
           </div>
           <!-- <img src="..." class="card-img-top" alt="..."> -->
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Humedad <%= data.weather.humidity %>%</li>
-            <li class="list-group-item">Viento del Sector <%= data.weather.wing_deg %></li>
+            <li class="list-group-item">Humedad <%= data.weather.humidity %> %</li>
+            <li class="list-group-item">Presión <%= data.weather.pressure %> hPa</li>
+            <li class="list-group-item">Viento <%= data.weather.wing_deg %> a <%= data.weather.wind_speed %> km/h</li>
             <% if(data.weather.st){ %> 
             <li class="list-group-item">Sensacion Termica <%= data.weather.st %>°</li>
             <% } %> 

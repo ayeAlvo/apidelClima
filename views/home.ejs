@@ -56,67 +56,40 @@
 
   <div class="container">
     <h1 class="text-center mt-4">Bienvenido!</h1> 
-    <h3 class="text-center mt-4">Consulta el Clima de tus Localidades Favoritas</h3>
+    <h3 class="text-center mt-4 mb-4">Consulta el Clima de tus Localidades Favoritas</h3>
   
-    <!-- La Plata  -->
+    <!-- Provincias Home  -->
     <section class="row row-cols-1 row-cols-md-3 g-4">
+      <% provincesHome.forEach(data => { %>
         <div class="col"> 
           <div class="card text-dark bg-info mb-3 shadow" style="max-width: 18rem;">
-            <div class="card-header"><%= laPlata.name %></div>
+            <div class="card-header"><%= data.name %></div>
             <div class="card-body">
-              <h5 class="card-title">La temperatura es de <%= laPlata.weather.tempDesc %></h5>
-              <p class="card-text"><% if(laPlata.weather.temp < 10){ %>
+              <h5 class="card-title">La temperatura es de <%= data.weather.tempDesc %></h5>
+              <p class="card-text"><% if(data.weather.temp < 10){ %>
                 Actualmente hace <strong>¡mucho frío!</strong>
-              <% }else if(laPlata.weather.temp < 20 && laPlata.weather.temp >= 10){ %> </p>
+              <% }else if(data.weather.temp < 20 && data.weather.temp >= 10){ %> </p>
                 <p>Actualmente está <strong>¡un poco fresco!</strong></p>
-                <% }else if(laPlata.weather.temp >= 20 && laPlata.weather.temp < 30){ %> 
-                  <p>Actualmente está <strong>¡Está agradable!</strong></p>
-                <% }else if(laPlata.weather.temp >= 30){ %>  
+                <% }else if(data.weather.temp >= 20 && data.weather.temp < 30){ %> 
+                  <p>Actualmente está <strong>¡agradable!</strong></p>
+                <% }else if(data.weather.temp >= 30){ %>  
                   <p>Actualmente hace mucho <strong>¡calor!</strong></p>
                   <% } %>  
-              <p class="card-text">y el cielo esta <strong><%= laPlata.weather.description %></strong></p>
+              <p class="card-text">y el cielo esta <strong><%= data.weather.description %></strong></p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Humedad <%= laPlata.weather.humidity %>%</li>
-              <li class="list-group-item">Viento del Sector <%= laPlata.weather.wing_deg %></li>
-              <% if(laPlata.weather.st){ %> 
-              <li class="list-group-item">Sensacion Termica <%= laPlata.weather.st %>°</li>
+              <li class="list-group-item">Humedad <%= data.weather.humidity %> %</li>
+              <li class="list-group-item">Presión <%= data.weather.pressure %> hPa</li>
+              <li class="list-group-item">Viento <%= data.weather.wing_deg %> a <%= data.weather.wind_speed %> km/h</li>
+              <% if(data.weather.st){ %> 
+              <li class="list-group-item">Sensacion Termica <%= data.weather.st %>°</li>
               <% } %> 
-              <li class="list-group-item">Visibilidad <%= laPlata.weather.visibility %> Km</li>
-              <li class="list-group-item">Provincia de <%= laPlata.province %></li>
+              <li class="list-group-item">Visibilidad <%= data.weather.visibility %> Km</li>
+              <li class="list-group-item">Provincia de <%= data.province %></li>
             </ul>
           </div>
         </div>
-
-       <!-- Cordoba  -->    
-      <div class="col"> 
-        <div class="card text-dark bg-info mb-3 shadow" style="max-width: 18rem;">
-          <div class="card-header"><%= cordoba.name %></div>
-          <div class="card-body">
-            <h5 class="card-title">La temperatura es de <%= cordoba.weather.tempDesc %></h5>
-            <p class="card-text"><% if(cordoba.weather.temp < 10){ %>
-              Actualmente hace <strong>¡mucho frío!</strong>
-            <% }else if(cordoba.weather.temp < 20 && cordoba.weather.temp >= 10){ %> </p>
-              <p>Actualmente está <strong>¡un poco fresco!</strong></p>
-              <% }else if(cordoba.weather.temp >= 20 && cordoba.weather.temp < 30){ %> 
-                <p>Actualmente está <strong>¡Está agradable!</strong></p>
-              <% }else if(cordoba.weather.temp >= 30){ %>  
-                <p>Actualmente hace mucho <strong>¡calor!</strong></p>
-                <% } %>  
-            <p class="card-text">y el cielo esta <strong><%= cordoba.weather.description %></strong></p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Humedad <%= cordoba.weather.humidity %>%</li>
-            <li class="list-group-item">Viento del Sector <%= cordoba.weather.wing_deg %></li>
-            <% if(cordoba.weather.st){ %> 
-            <li class="list-group-item">Sensacion Termica <%= laPlata.weather.st %>°</li>
-            <% } %> 
-            <li class="list-group-item">Visibilidad <%= cordoba.weather.visibility %> Km</li>
-            <li class="list-group-item">Provincia de <%= cordoba.province %></li>
-          </ul>
-        </div>
-      </div>
-      
+        <% }) %>
     </section>
 
     </div>  
