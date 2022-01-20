@@ -10,6 +10,7 @@
 <body> 
   <div class="container">
   <h1 class="mb-4 text-center" >Localidades de la Provincia de <%= nameProv %> </h1>
+  
   <section class="row row-cols-1 row-cols-md-3 g-4">
     <% province.forEach(data => { %>
       <div class="col"> 
@@ -41,9 +42,8 @@
         </div>
       </div>
   <% }) %>
-
-
  </section>
 </div>
+
 </body>
 </html>
