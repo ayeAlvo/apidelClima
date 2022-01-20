@@ -5,13 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/1c47cb3d39.js" crossorigin="anonymous"></script>
   <title>Api Clima</title>
 </head>
 <body> 
-  <div class="container">
-  <h1 class="mb-4 text-center" >Localidades de la Provincia de <%= nameProv %> </h1>
 
-  <section class="row row-cols-1 row-cols-md-3 g-4">
+  <!-- navBar -->
+  <header><%- include("./partials/navBar") %></header>
+  <!-- fin navBar -->
+
+  <div class="container">
+  <h1 class="mb-4 text-center" >El clima de la Provincia de <%= nameProv %> </h1>
+
+  <section class="row row-cols-1 row-cols-md-3 g-4 mt-3">
     <% province.forEach(data => { %>
       <div class="col"> 
         <div class="card text-dark bg-info mb-3 shadow" style="max-width: 18rem;">
@@ -31,13 +37,13 @@
           </div>
           <!-- <img src="..." class="card-img-top" alt="..."> -->
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Humedad <%= data.weather.humidity %> %</li>
-            <li class="list-group-item">Presión <%= data.weather.pressure %> hPa</li>
-            <li class="list-group-item">Viento <%= data.weather.wing_deg %> a <%= data.weather.wind_speed %> km/h</li>
+            <li class="list-group-item"><i class="fas fa-tint"></i> Humedad <%= data.weather.humidity %> %</li>
+            <li class="list-group-item"><i class="fas fa-long-arrow-alt-down"></i> Presión <%= data.weather.pressure %> hPa</li>
+            <li class="list-group-item"><i class="fas fa-wind"></i> Viento <%= data.weather.wing_deg %> a <%= data.weather.wind_speed %> km/h</li>
             <% if(data.weather.st){ %> 
-            <li class="list-group-item">Sensacion Termica <%= data.weather.st %>°</li>
+            <li class="list-group-item"><i class="fas fa-thermometer-half"></i> Sensacion Termica <%= data.weather.st %>°</li>
             <% } %> 
-            <li class="list-group-item">Visibilidad <%= data.weather.visibility %> Km</li>
+            <li class="list-group-item"><i class="fas fa-eye"></i> Visibilidad <%= data.weather.visibility %> Km</li>
             <li class="list-group-item">Provincia de <%= data.province %></li>
           </ul>
         </div>
@@ -45,6 +51,10 @@
   <% }) %>
  </section>
 </div>
+
+<!-- inicio footer -->
+<%- include("./partials/footer") %>
+<!-- fin footer -->
 
 </body>
 </html>
