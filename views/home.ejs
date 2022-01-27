@@ -18,8 +18,8 @@
   <!-- Fin NavBar -->
 
   <div class="container">
-    <h1 class="text-center mt-4">Bienvenido!</h1> 
-    <h3 class="text-center mt-4 mb-4">Consulta el Clima de tus Localidades Favoritas</h3>
+    <h1 class="text-center mt-4 text-muted">Bienvenido!</h1> 
+    <h3 class="text-center mt-4 mb-4 text-light bg-secondary">Consulta el Clima en tiempo real de tus Localidades Favoritas</h3>
   
     <!-- Provincias Home  -->
     <section class="row row-cols-1 row-cols-md-3 g-4 mt-3">
@@ -27,23 +27,26 @@
         <div class="col"> 
           <div class="card text-dark bg-info mb-3 shadow" style="max-width: 18rem;">
             <div class="card-header"><h2 class="text-center"><%= data.name %></h2>
-            <% if(data.weather.description.toLowerCase().includes('neblina')){ %>
-              <%}else if(data.weather.description.toLowerCase().includes('tormenta')){ %> 
-                <p class="text-center"><i class="fas fa-bolt fa-3x"></i></p>
-              <p class="text-center"><i class="fas fa-smog fa-3x"></i></p>
-              <%}else if(data.weather.description.toLowerCase().includes('chaparrones')){ %> 
-                <p class="text-center"><i class="fas fa-cloud-showers-heavy fa-3x"></i></p>
-              <%}else if(data.weather.description.toLowerCase().includes('llovizna')){ %> 
-                <p class="text-center"><i class="fas fa-cloud-rain fa-3x"></i></p>  
-              <%}else if(data.weather.description.toLowerCase().includes('nublado')){ %> 
-              <p class="text-center"><i class="fas fa-cloud-sun fa-3x"></i></p>
-              <% }else if(data.weather.description.toLowerCase().includes('cubierto')){ %>
-                <p class="text-center"><i class="fas fa-cloud fa-3x"></i></p>
-              <% }else if(data.weather.description.toLowerCase().includes('despejado')){ %>
-                <p class="text-center"><i class="fas fa-sun fa-3x"></i></p>
-              <% }else{ %>     
-                <p class="text-center"><i class="fas fa-rainbow fa-3x"></i></p>
-              <% } %>   
+              <div class="d-flex text-center">
+                <% if(data.weather.description.toLowerCase().includes('neblina')){ %>
+                    <p class="mx-4"><i class="fas fa-smog fa-3x"></i></p>
+                  <%}else if(data.weather.description.toLowerCase().includes('tormenta')){ %> 
+                    <p class="mx-4"><i class="fas fa-bolt fa-3x"></i></p>
+                  <%}else if(data.weather.description.toLowerCase().includes('chaparrones')){ %> 
+                    <p class="mx-4"><i class="fas fa-cloud-showers-heavy fa-3x"></i></p>
+                  <%}else if(data.weather.description.toLowerCase().includes('llovizna')){ %> 
+                    <p class="mx-4"><i class="fas fa-cloud-rain fa-3x"></i></p>  
+                  <%}else if(data.weather.description.toLowerCase().includes('nublado')){ %> 
+                  <p class="mx-4"><i class="fas fa-cloud-sun fa-3x"></i></p>
+                  <% }else if(data.weather.description.toLowerCase().includes('cubierto')){ %>
+                    <p class="mx-4"><i class="fas fa-cloud fa-3x"></i></p>
+                  <% }else if(data.weather.description.toLowerCase().includes('despejado')){ %>
+                    <p class="mx-4"><i class="fas fa-sun fa-3x"></i></p>
+                  <% }else{ %>     
+                    <p class="mx-4"><i class="fas fa-rainbow fa-3x"></i></p>
+                  <% } %>
+                  <h2 class="mx-4"><%= data.weather.tempDesc %></h2>
+              </div>        
             </div>
             <div class="card-body">
               <h5 class="card-title">La temperatura es de <%= data.weather.tempDesc %></h5>

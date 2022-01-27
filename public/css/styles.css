@@ -1,0 +1,14 @@
+.navbar-image{
+  background-image: url(../img/blue-sky.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-body{
+  background: linear-gradient(0deg, rgba(232,244,255,1) 26%, rgba(13, 202, 240, 0.94) 87%);
+}
+
+body{
+  background-image: url(../img/weather-vector-icons.png);
+  /* background-image: url(../img/weather-forecast.jpg); */
+}

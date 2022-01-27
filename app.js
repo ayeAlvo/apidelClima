@@ -11,7 +11,7 @@ app.set('views', path.resolve(__dirname,'./views'));
 app.set('view engine', 'ejs');
 
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.resolve(__dirname, './public')));
 
 //URL encode 
 app.use(express.json());
