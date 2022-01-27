@@ -17,7 +17,7 @@
       <label class="navbar-brand">Selecciona una Provincia</label>
       <% if(locals.provinces){ %> 
       <form action="/" method="post" class="nav-item">
-        <select name="valor" class="form-select">
+        <select name="valor" class="form-select" aria-label="Default select example">
           <% locals.provinces.forEach(province => {%>  
           <option value='<%= province %>' name='valor'>
             <%= province %>
