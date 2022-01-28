@@ -29,7 +29,7 @@
           <div class="card text-dark bg-info mb-3 shadow" style="max-width: 18rem;">
             <div class="card-header"><h2 class="text-center"><%= data.name %></h2>
               <div class="d-flex text-center">
-                <% if(data.weather.description.toLowerCase().includes('neblina')){ %>
+                <% if(data.weather.description.toLowerCase().includes('neblina') || data.weather.description.toLowerCase().includes('niebla') ){ %>
                     <p class="mx-4"><i class="fas fa-smog fa-3x"></i></p>
                   <%}else if(data.weather.description.toLowerCase().includes('tormenta')){ %> 
                     <p class="mx-4"><i class="fas fa-bolt fa-3x"></i></p>
