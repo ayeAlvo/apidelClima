@@ -36,7 +36,9 @@
                   <%}else if(data.weather.description.toLowerCase().includes('chaparrones')){ %> 
                     <p class="mx-4"><i class="fas fa-cloud-showers-heavy fa-3x"></i></p>
                   <%}else if(data.weather.description.toLowerCase().includes('llovizna')){ %> 
-                    <p class="mx-4"><i class="fas fa-cloud-rain fa-3x"></i></p>  
+                    <p class="mx-4"><i class="fas fa-cloud-rain fa-3x"></i></p>
+                  <%}else if(data.weather.description.toLowerCase().includes('lluvia')){ %> 
+                    <p class="mx-4"><i class="fas fa-cloud-rain fa-3x"></i></p>    
                   <%}else if(data.weather.description.toLowerCase().includes('nublado')){ %> 
                   <p class="mx-4"><i class="fas fa-cloud-sun fa-3x"></i></p>
                   <% }else if(data.weather.description.toLowerCase().includes('cubierto')){ %>
