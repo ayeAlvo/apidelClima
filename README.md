@@ -1,4 +1,4 @@
-# ClimaDina - Consumiendo API del Clima
+# ClimaDina - Consumiendo API del Clima desde el Backend
 
 Deploy(https://climadina.herokuapp.com/)
 
